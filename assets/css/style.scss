@@ -1,0 +1,44 @@
+---
+# Only the triple-dashed front matter tells Jekyll to process this file.
+---
+
+@import "{{ site.theme }}"; /* inherit theme defaults */
+
+/* Simple, clean overrides */
+.badges { margin: 0.5rem 0 1.25rem; }
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #d0d0d0;
+  font-size: 0.85rem;
+  margin-right: 0.35rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin: 12px 0 4px;
+}
+
+.project-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.project-card img { width: 100%; border-radius: 10px; }
+.project-card h3 { margin: 10px 0 6px; }
+.btn {
+  display: inline-block; padding: 8px 12px; border-radius: 10px;
+  border: 1px solid #e0e0e0; text-decoration: none;
+}
+
+.hobby-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+}
+.hobby-grid img { width: 100%; border-radius: 10px; }
+
+.site-footer { margin-top: 40px; font-size: 0.9rem; color: #666; }

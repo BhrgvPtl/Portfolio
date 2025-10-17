@@ -1,0 +1,37 @@
+title: "Bhargav Patel"
+description: "Data Science • Machine Learning • Analytics"
+url: "https://BhrgvPtl.github.io"
+baseurl: "/portfolio" # empty string "" if repository is <your-username>.github.io
+author: "Bhargav Patel"
+
+# Use a GitHub Pages compatible remote theme
+remote_theme: pages-themes/minimal@v0.2.0
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Navbar links (rendered in index.md)
+nav_links:
+  - text: "About Me"
+    href: "#about-me"
+  - text: "Projects"
+    href: "#featured-projects"
+  - text: "Resume"
+    href: "#resume"
+  - text: "Hobby"
+    href: "#my-hobby"
+
+# Social (optional)
+social:
+  github: "https://github.com/BhrgvPtl"
+  linkedin: "https://www.linkedin.com/in/<your-handle>/"
+  email: "bhargavp@bu.edu"
+
+# SEO
+seo:
+  type: Person
+  name: "Bhargav Patel"
+  links:
+    - "https://github.com/<your-username>"
+    - "https://www.linkedin.com/in/<your-handle>/"
