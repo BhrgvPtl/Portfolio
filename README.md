@@ -5,7 +5,7 @@
 2. Go to **Settings → Pages** and set:
    - Source: *Deploy from a branch*
    - Branch: `main` / `/ (root)`
-3. Your site will be at `https://<username>.github.io/portfolio`.
+3. Your site will be at `https://<username>.github.io/Portfolio`.
    - If you name your repo `<username>.github.io`, set `baseurl: ""` in `_config.yml`.
 
 ## Customize
