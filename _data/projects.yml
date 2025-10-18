@@ -1,0 +1,50 @@
+# ---- Auto-generated from your public GitHub repos ----
+# Tip: replace each img with a real thumbnail under /images/
+
+- title: "Portfolio"
+  img: "/images/project-portfolio.jpg"
+  tags: ["Jekyll", "GitHub Pages", "SCSS"]
+  blurb: "Your personal site with a custom Terminal-OS desktop UI and data-driven projects."
+  url: "https://github.com/BhrgvPtl/Portfolio"
+
+- title: "mlops-rag-streamlit"
+  img: "/images/project-mlops-rag.jpg"
+  tags: ["Python", "RAG", "Streamlit", "MLOps"]
+  blurb: "End-to-end Retrieval-Augmented Generation app with chunking, embeddings, and Streamlit UI."
+  url: "https://github.com/BhrgvPtl/mlops-rag-streamlit"
+
+- title: "soccervision-pro"
+  img: "/images/project-soccervision.jpg"
+  tags: ["Computer Vision", "YOLO", "Tracking", "Sports Analytics"]
+  blurb: "YOLO-based sports analytics pipeline for player detection and match insights."
+  url: "https://github.com/BhrgvPtl/soccervision-pro"
+
+- title: "decoder-transformer"
+  img: "/images/project-transformer.jpg"
+  tags: ["Transformers", "Attention", "Jupyter"]
+  blurb: "Minimal GPT-style decoder transformer built from scratch for learning and experimentation."
+  url: "https://github.com/BhrgvPtl/decoder-transformer"
+
+- title: "TestWearApp"
+  img: "/images/project-wearapp.jpg"
+  tags: ["Android", "Wear OS", "Kotlin?"]
+  blurb: "Wear OS sample app and experiments (UI & sensors)."
+  url: "https://github.com/BhrgvPtl/TestWearApp"
+
+- title: "Sentimental-analysis-using-BERT"
+  img: "/images/project-bert.jpg"
+  tags: ["NLP", "BERT", "Python"]
+  blurb: "Fine-tuning BERT for sentiment classification with reproducible notebooks."
+  url: "https://github.com/BhrgvPtl/Sentimental-analysis-using-BERT"
+
+- title: "rag_env"
+  img: "/images/project-rag-env.jpg"
+  tags: ["Python", "Environment", "RAG"]
+  blurb: "Reusable Python environment and scaffolding for RAG experiments."
+  url: "https://github.com/BhrgvPtl/rag_env"
+
+- title: "AWS-Kinesis-Data-analytics"
+  img: "/images/project-kinesis.jpg"
+  tags: ["AWS", "Kinesis", "Streaming", "Python"]
+  blurb: "Data streaming & analytics patterns on AWS Kinesis."
+  url: "https://github.com/BhrgvPtl/AWS-Kinesis-Data-analytics"
