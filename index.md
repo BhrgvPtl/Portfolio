@@ -17,7 +17,7 @@ title: Home
     <div class="content">
       <h1>$ whoami</h1>
       <p>Bhargav Patel — data/ML engineer shipping measurable impact.</p>
-      <pre class="term">> skills --show python sql pytorch ml transformers mlops analytics</pre>
+      <pre class="term">> skills --show python sql pytorch transformers mlops analytics</pre>
       <p>I build data products end-to-end: pipelines → models → dashboards → outcomes.</p>
     </div>
   </div>
@@ -27,13 +27,13 @@ title: Home
     <div class="bar"><span>projects.json</span><div class="dots"><b></b><b></b><b></b></div></div>
     <div class="content grid">
       {% for p in site.data.projects %}
-        <a class="card" href="{{ p.url }}" target="_blank" rel="noopener">
-          <img src="{{ p.img | relative_url }}" alt="{{ p.title }}" loading="lazy" width="1200" height="675">
-          <h3>{{ p.title }}</h3>
-          <code>{{ p.tags | join: ', ' }}</code>
-          <p class="lede">{{ p.blurb }}</p>
-          <span class="btn">Check it out</span>
-        </a>
+      <a class="card" href="{{ p.url }}" target="_blank" rel="noopener">
+        <img src="{{ p.img | relative_url }}" alt="{{ p.title }}" loading="lazy" width="1200" height="675">
+        <h3>{{ p.title }}</h3>
+        <code>{{ p.tags | join: ', ' }}</code>
+        <p class="lede">{{ p.blurb }}</p>
+        <span class="btn">Check it out</span>
+      </a>
       {% endfor %}
     </div>
   </div>
@@ -62,21 +62,80 @@ title: Home
   </div>
 </div>
 
+<!-- ========================= -->
+<!--  My Hobby (polished grid) -->
+<!-- ========================= -->
+
+## My Hobby {#my-hobby}
+
+<p class="lede">Outside work, I explore football analytics and shoot match moments & training sessions. A few snaps:</p>
+
+<ul class="gallery">
+  <li>
+    <a href="{{ '/images/hobby-1.jpg' | relative_url }}" class="lightbox" data-caption="Training drill — passing lanes">
+      <figure>
+        <img src="{{ '/images/hobby-1.jpg' | relative_url }}" alt="Training drill — passing lanes" loading="lazy" width="1200" height="900">
+        <figcaption>Training drill — passing lanes</figcaption>
+      </figure>
+    </a>
+  </li>
+  <li>
+    <a href="{{ '/images/hobby-2.jpg' | relative_url }}" class="lightbox" data-caption="Matchday — build-up shape">
+      <figure>
+        <img src="{{ '/images/hobby-2.jpg' | relative_url }}" alt="Matchday — build-up shape" loading="lazy" width="1200" height="900">
+        <figcaption>Matchday — build-up shape</figcaption>
+      </figure>
+    </a>
+  </li>
+  <li>
+    <a href="{{ '/images/hobby-3.jpg' | relative_url }}" class="lightbox" data-caption="Pressing trigger — minute 63">
+      <figure>
+        <img src="{{ '/images/hobby-3.jpg' | relative_url }}" alt="Pressing trigger — minute 63" loading="lazy" width="1200" height="900">
+        <figcaption>Pressing trigger — minute 63</figcaption>
+      </figure>
+    </a>
+  </li>
+</ul>
+
+<!-- Lightweight lightbox -->
+<div id="lb" class="lb" hidden>
+  <button class="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</div>
+
 <script>
-  // Toggle windows from the dock
+  // Dock toggles
   document.querySelectorAll('.dock button').forEach(b=>{
     b.addEventListener('click', ()=>{
-      const id = b.dataset.win;
-      const win = document.getElementById(id);
+      const win = document.getElementById(b.dataset.win);
       win.classList.toggle('front');
     });
   });
 
   // Drag windows
   document.querySelectorAll('.window').forEach(win=>{
-    let dx=0, dy=0, drag=false, bar=win.querySelector('.bar');
+    let dx=0,dy=0,drag=false,bar=win.querySelector('.bar');
     bar.addEventListener('mousedown',e=>{drag=true; dx=e.clientX-win.offsetLeft; dy=e.clientY-win.offsetTop; win.classList.add('front');});
     document.addEventListener('mousemove',e=>{ if(!drag) return; win.style.left=(e.clientX-dx)+'px'; win.style.top=(e.clientY-dy)+'px'; });
     document.addEventListener('mouseup',()=>drag=false);
   });
+
+  // Hobby lightbox
+  (function(){
+    const lb = document.getElementById('lb');
+    const img = document.getElementById('lb-img');
+    const cap = document.getElementById('lb-cap');
+    function open(src, caption){ img.src = src; cap.textContent = caption || ''; lb.hidden = false; }
+    function close(){ lb.hidden = true; img.src = ''; cap.textContent=''; }
+    document.querySelectorAll('a.lightbox').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        open(a.href, a.dataset.caption);
+      });
+    });
+    lb.addEventListener('click', e=>{ if(e.target === lb) close(); });
+    document.querySelector('.lb-close').addEventListener('click', close);
+    document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+  })();
 </script>

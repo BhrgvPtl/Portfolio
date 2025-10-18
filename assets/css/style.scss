@@ -1,48 +1,109 @@
-/* === Portfolio Card Polish (like helloitsdaksh) === */
+---
+# keep this front matter so Jekyll processes SCSS
+---
+
+@import "{{ site.theme }}"; /* inherit theme defaults */
+
+/* Fonts are loaded from head-custom.html */
+
+/* ================================
+   Terminal OS desktop aesthetic
+==================================*/
+:root{ --bg:#0b1220; --pane:#0f172a; --glass:rgba(16,24,40,.35); --accent:#22d3ee; --text:#e5f0ff; --muted:#2a3347; }
+
+body{
+  background: radial-gradient(1200px 700px at 20% 0%, #101a33, #080c18 70%), var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  min-height: 100vh;
+}
+
+.site-footer .owner, .site-footer .site-footer-credits { display:none; }
+
+.desktop{ position:relative; min-height:70vh; margin-top: 8px; }
+.dock{
+  position: sticky; top: 0; z-index: 10;
+  display:flex; gap:8px; justify-content:flex-end;
+  padding:8px 0; backdrop-filter: blur(8px);
+  background: var(--glass); border-bottom: 1px solid #1d2940;
+}
+.dock button{
+  background: transparent; border:1px solid var(--muted); color:var(--text);
+  padding:6px 10px; border-radius:10px; cursor:pointer;
+}
+.dock button:hover{ border-color:var(--accent); color:var(--accent); }
+
+.window{
+  position:absolute; width:min(640px, 92vw);
+  border:1px solid var(--muted); border-radius:14px; overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transform: translateZ(0);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  backdrop-filter: blur(10px);
+}
+.window.front{ z-index: 5; }
+.window .bar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:8px 10px; cursor:grab;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.window .bar span{ opacity:.86; }
+.window .bar .dots b{
+  display:inline-block; width:10px; height:10px; border-radius:50%; margin-left:6px; background:#ff5f56;
+}
+.window .bar .dots b:nth-child(2){ background:#ffbd2e; }
+.window .bar .dots b:nth-child(3){ background:#27c93f; }
+
+.window .content{ padding:14px 14px 18px; }
+
+/* ================================
+   Polished project cards (ref look)
+==================================*/
+.window .content.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+}
+
 .card{
   display:block;
   text-decoration:none;
   color:inherit;
-  border:1px solid #e5e7eb;           /* lighter border for clarity */
+  border:1px solid #e5e7eb;
   border-radius:18px;
   padding:16px;
   background:#fff;
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
+.card:hover{ transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.06); }
 
-/* Top image: fixed height, nicely cropped */
 .card img{
   width:100%;
-  height: 180px;                       /* adjust 160–220px to taste */
-  object-fit: cover;                   /* crop to fill like the reference */
+  height:180px;
+  object-fit:cover;
   border-radius:14px;
-  background:#f3f4f6;                  /* pleasant placeholder if image missing */
+  background:#f3f4f6;
   display:block;
 }
-
-/* Title + meta (italic tech stack line) */
 .card h3{
   margin:12px 0 6px;
-  font-weight: 700;
+  font-weight:700;
   color:#111827;
 }
 .card code{
   display:block;
-  margin-bottom: 8px;
-  color:#6b7280;                       /* muted gray */
-  font-style: italic;                  /* like the screenshot */
-  background: transparent;             /* remove code tag boxy bg if any */
-  padding: 0;
+  margin-bottom:8px;
+  color:#6b7280;
+  font-style:italic;
+  background:transparent;
+  padding:0;
 }
-
-/* Blurb paragraph */
 .card .lede{
   color:#374151;
   margin:0 0 14px;
-  line-height: 1.5;
+  line-height:1.5;
 }
-
-/* Outlined button */
 .btn{
   display:inline-block;
   padding:10px 14px;
@@ -50,7 +111,7 @@
   border:1px solid #d1d5db;
   text-decoration:none;
   color:#1f2937;
-  background: transparent;
+  background:transparent;
 }
 .btn:hover{
   border-color:#111827;
@@ -59,14 +120,62 @@
   box-shadow: 0 4px 12px rgba(0,0,0,.06);
 }
 
-/* Cards grid spacing inside your window */
-.window .content.grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:18px;
+/* ================================
+   Hobby gallery (grid + lightbox)
+==================================*/
+.lede { color:#4b5563; margin:.25rem 0 1rem; }
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.gallery li { margin: 0; }
+.gallery figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: block;
+}
+.gallery figcaption {
+  font-size: .9rem;
+  color: #6b7280;
+  margin-top: 6px;
 }
 
-/* Dark mode keep contrast */
+/* Lightbox */
+.lb {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.85);
+  display: grid; place-items: center;
+  padding: 24px; z-index: 50;
+}
+.lb[hidden] { display: none; }
+.lb img {
+  max-width: min(92vw, 1200px);
+  max-height: 80vh;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+.lb p { color: #e5e7eb; margin-top: 8px; text-align: center; }
+.lb-close {
+  position: absolute; top: 16px; right: 16px;
+  font-size: 28px; line-height: 1;
+  background: transparent; border: 0; color: #fff; cursor: pointer;
+}
+
+/* ================================
+   Responsive + light theme fallback
+==================================*/
+@media (max-width: 640px){
+  .window{ width: 96vw; left: 2vw !important; }
+}
+
 @media (prefers-color-scheme: dark){
   .card{ background:#111418; border-color:#2a2f3a; color:#ebf0f6; }
   .card h3{ color:#eaeef5; }
@@ -74,4 +183,15 @@
   .card .lede{ color:#c9d2dc; }
   .btn{ border-color:#3a3f4a; color:#eaeef5; }
   .btn:hover{ border-color:#9ecbff; color:#9ecbff; box-shadow:none; }
+  .lede { color:#9aa7b4; }
+  .gallery figcaption { color:#9aa7b4; }
+}
+
+@media (prefers-color-scheme: light){
+  :root{ --text:#0f172a; --bg:#f4f6fb; --pane:#ffffff; --glass:rgba(255,255,255,.7); --muted:#d0d7e2; --accent:#026aa7; }
+  body{ background: linear-gradient(180deg, #eef3ff, #f7f9ff); color:#0f172a; }
+  .dock{ background: var(--glass); border-bottom-color:#e2e8f0; }
+  .window{ background: #fff; border-color:#e5e7eb; box-shadow: 0 10px 30px rgba(15,23,42,.08); }
+  .card{ border-color:#e5e7eb; color:#0f172a; background:#fff; }
+  .btn{ border-color:#e5e7eb; color:#0f172a; }
 }
