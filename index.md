@@ -3,91 +3,80 @@ layout: default
 title: Home
 ---
 
-<div style="text-align:right; font-size:0.95rem;">
-  <a href="#about-me">About Me</a> |
-  <a href="#featured-projects">Projects</a> |
-  <a href="#resume">Resume</a> |
-  <a href="#my-hobby">Hobby</a>
+<div class="desktop">
+  <div class="dock">
+    <button data-win="about">About</button>
+    <button data-win="projects">Projects</button>
+    <button data-win="resume">Resume</button>
+    <button data-win="contact">Contact</button>
+  </div>
+
+  <!-- ABOUT WINDOW -->
+  <div class="window front" id="about" style="left:40px; top:120px;">
+    <div class="bar"><span>about.md</span><div class="dots"><b></b><b></b><b></b></div></div>
+    <div class="content">
+      <h1>$ whoami</h1>
+      <p>Bhargav Patel — data/ML engineer shipping measurable impact.</p>
+      <pre class="term">> skills --show python sql pytorch ml transformers mlops analytics</pre>
+      <p>I build data products end-to-end: pipelines → models → dashboards → outcomes.</p>
+    </div>
+  </div>
+
+  <!-- PROJECTS WINDOW -->
+  <div class="window" id="projects" style="left:420px; top:160px;">
+    <div class="bar"><span>projects.json</span><div class="dots"><b></b><b></b><b></b></div></div>
+    <div class="content grid">
+      {% for p in site.data.projects %}
+        <a class="card" href="{{ p.url }}" target="_blank" rel="noopener">
+          <img src="{{ p.img | relative_url }}" alt="{{ p.title }}" loading="lazy" width="1200" height="675">
+          <h3>{{ p.title }}</h3>
+          <code>{{ p.tags | join: ', ' }}</code>
+          <p class="lede">{{ p.blurb }}</p>
+          <span class="btn">Check it out</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- RESUME WINDOW -->
+  <div class="window" id="resume" style="left:180px; top:380px;">
+    <div class="bar"><span>resume.pdf</span><div class="dots"><b></b><b></b><b></b></div></div>
+    <div class="content">
+      <p><a class="btn" href="{{ '/pdf/resume.pdf' | relative_url }}" target="_blank" rel="noopener">Open resume</a></p>
+      <ul class="bullets">
+        <li>Reduced inference cost <b>32%</b> via quantization + batching</li>
+        <li>Built GCP ELT; freshness from <b>24h → 30m</b></li>
+        <li>Deployed transformer prototype end-to-end</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTACT WINDOW -->
+  <div class="window" id="contact" style="left:720px; top:360px;">
+    <div class="bar"><span>contact.txt</span><div class="dots"><b></b><b></b><b></b></div></div>
+    <div class="content">
+      <p><a href="mailto:you@example.com">you@example.com</a></p>
+      <p><a href="https://www.linkedin.com/in/<your-handle>/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/BhrgvPtl" target="_blank" rel="noopener">GitHub</a></p>
+      <pre class="term">> say-hi --subject "Project ideas or roles"</pre>
+    </div>
+  </div>
 </div>
 
-# Bhargav Patel — Data Science / Machine Learning
+<script>
+  // Toggle windows from the dock
+  document.querySelectorAll('.dock button').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const id = b.dataset.win;
+      const win = document.getElementById(id);
+      win.classList.toggle('front');
+    });
+  });
 
-Hi, I'm Bhargav. I build data products and ML systems that turn messy, real‑world data into business impact.
-
-<div class="badges">
-  <span class="badge">Python</span>
-  <span class="badge">SQL</span>
-  <span class="badge">PyTorch</span>
-  <span class="badge">Tableau/Power BI</span>
-  <span class="badge">GCP / Azure</span>
-</div>
-
----
-
-## About Me {#about-me}
-
-I’m a data/ML engineer with a focus on analytics, model deployment, and automation. I love end‑to‑end projects—data pipelines → models → dashboards → measurable outcomes.
-
-**What I do**
-- ML & DL: supervised learning, embeddings, transformers
-- Analytics: experimentation, KPI design, cohort analysis
-- Data Engineering: pipelines, orchestration, CI/CD
-- Visualization: dashboards that decision‑makers actually use
-
----
-
-## Featured Projects {#featured-projects}
-
-<div class="projects-grid">
-
-<div class="project-card">
-  <img src="images/project-transformer.jpg" alt="Transformer from Scratch">
-  <h3>Transformer from Scratch</h3>
-  <p><em>Transformers, Attention, PyTorch</em></p>
-  <p>Educational repo building a mini GPT‑style transformer end‑to‑end with clean, well‑commented code.</p>
-  <p><a class="btn" href="https://github.com/you/decoder-transformer" target="_blank">Check it out</a></p>
-</div>
-
-<div class="project-card">
-  <img src="images/project-retail.jpg" alt="Retail Analytics Dashboard">
-  <h3>Retail Sales Performance Dashboard</h3>
-  <p><em>SQL, Python (Pandas), Power BI/Tableau</em></p>
-  <p>ETL + semantic metrics layer and interactive dashboard for revenue, margin%, and repeat purchases with MoM/YoY.</p>
-  <p><a class="btn" href="https://github.com/you/retail-analytics" target="_blank">Check it out</a></p>
-</div>
-
-<div class="project-card">
-  <img src="images/project-churn.jpg" alt="Customer Churn">
-  <h3>Customer Segmentation & Churn Prediction</h3>
-  <p><em>R, Logistic Regression/Random Forest, K‑means</em></p>
-  <p>EDA + modeling to quantify churn drivers and produce a retention playbook for marketing ops.</p>
-  <p><a class="btn" href="https://github.com/you/churn-segmentation" target="_blank">Check it out</a></p>
-</div>
-
-</div>
-
----
-
-## Resume {#resume}
-
-- **Summary**: Data/ML engineer with experience shipping production analytics/ML and clear business value.
-- **Education**: MS Applied Data Analytics — Boston University (2025)
-- **Experience**: Roles across data eng, MLOps, and analytics; cross‑functional stakeholder work.
-
-<p><a class="btn" href="pdf/resume.pdf" target="_blank">Download Resume (PDF)</a></p>
-
----
-
-## My Hobby {#my-hobby}
-
-Outside of work and school, I enjoy football analysis and building small tools for tracking player form and match momentum. Here are a few snaps:
-
-<div class="hobby-grid">
-  <img src="images/hobby-1.jpg" alt="Hobby photo 1">
-  <img src="images/hobby-2.jpg" alt="Hobby photo 2">
-  <img src="images/hobby-3.jpg" alt="Hobby photo 3">
-</div>
-
-<footer class="site-footer">
-  © {{ site.author }} — Built with Jekyll · <a href="https://github.com/{{ site.social.github | split: '/' | last }}">GitHub</a>
-</footer>
+  // Drag windows
+  document.querySelectorAll('.window').forEach(win=>{
+    let dx=0, dy=0, drag=false, bar=win.querySelector('.bar');
+    bar.addEventListener('mousedown',e=>{drag=true; dx=e.clientX-win.offsetLeft; dy=e.clientY-win.offsetTop; win.classList.add('front');});
+    document.addEventListener('mousemove',e=>{ if(!drag) return; win.style.left=(e.clientX-dx)+'px'; win.style.top=(e.clientY-dy)+'px'; });
+    document.addEventListener('mouseup',()=>drag=false);
+  });
+</script>
