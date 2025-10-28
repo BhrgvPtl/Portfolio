@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Bhargav Patel builds a real-time e-commerce analytics pipeline with Kafka, Airflow, and Spark to deliver sub-minute insights."
+    />
+    <title>Real-Time E-Commerce Analytics Pipeline &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Bhargav Patel</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">Streaming Commerce &mdash; Real-Time Insights</p>
+        <h1>Real-Time E-Commerce Analytics Pipeline</h1>
+        <p>
+          Built a resilient streaming and batch architecture that unifies transactional,
+          behavioral, and inventory data to power sub-minute dashboards for growth and
+          operations teams.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Data Engineer</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>12 weeks</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>70% faster analytics &bull; Unified streaming + batch lakehouse</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          Rapid growth introduced blind spots for merchandising, inventory, and lifecycle
+          marketing teams. Transactional data landed in daily batches, clickstream
+          events arrived through a third-party firehose, and inventory updates were
+          polled hourly. Stakeholders lacked a single view to monitor conversion drops
+          or low-stock alerts before revenue was lost.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Brokered event contracts with product and platform teams to capture high-value signals.</li>
+            <li>Stood up Kafka topics with schema registry support to merge clickstream and transactional feeds.</li>
+            <li>Orchestrated Spark Structured Streaming and batch ETL via Apache Airflow DAGs.</li>
+            <li>Modeled warehouse layers with time-based partitioning and product-category clustering.</li>
+            <li>Published materialized views and REST endpoints that serve executive dashboards.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>Apache Kafka</li>
+            <li>Apache Airflow</li>
+            <li>Apache Spark</li>
+            <li>Delta Lake</li>
+            <li>dbt Core</li>
+            <li>Looker Studio</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          With unified streams, we surfaced how customers dropped off after encountering
+          out-of-stock SKUs and long delivery estimates. The dashboards benchmarked
+          conversion rate by region, highlighted the real-time impact of promotions,
+          and exposed inventory gaps by supplier. This narrative reframed how
+          merchandising prioritized restocks.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Cut average query latency by 70% through partition pruning and bloom-filter indexes.</li>
+          <li>Reduced stockout detection time from 45 minutes to under 5 minutes with streaming alerts.</li>
+          <li>Improved marketing ROAS by 12% by routing spend away from low-inventory campaigns.</li>
+          <li>Delivered CI/CD pipelines with unit tests and data quality checks for every DAG.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Executive dashboard tracking conversion, revenue, and stock status in real time.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Streaming health view with throughput metrics and SLA adherence for each topic.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>Data flow diagram outlining ingestion, enrichment, and delivery tiers.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          Airflow coordinates CDC-based updates alongside micro-batch enrichment jobs. Each
+          step runs with automated tests, anomaly detection, and data contracts verified
+          in dbt. Infra is provisioned using Terraform modules to ensure reproducibility
+          across dev, staging, and prod environments.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          Dive into the
+          <a href="https://github.com/bhargavpatel/real-time-ecommerce-analytics" target="_blank" rel="noreferrer">GitHub repository</a>
+          for DAG definitions, streaming jobs, infrastructure as code, and documentation that explains
+          how to run the pipeline locally.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          I am experimenting with incremental feature computation for recommendation models and
+          exploring how to expose the same metrics through a lightweight API for partner integrations.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bhargav Patel.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>

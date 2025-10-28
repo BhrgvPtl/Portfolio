@@ -1,0 +1,107 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2488 >>
+stream
+BT
+/F1 12 Tf
+14 TL
+72 780 Td
+(Bhargav Patel) Tj
+T*
+(Data Engineer | Brookline, MA) Tj
+T*
+(+1 \(857\) 396-3749 | bhargavp@bu.edu | github.com/bhargavpatel | linkedin.com/in/bhargavpatel) Tj
+T*
+( ) Tj
+T*
+(SUMMARY) Tj
+T*
+(Detail oriented data engineer specializing in scalable warehousing, streaming ETL, and analytics enablement.) Tj
+T*
+(Proven track record optimizing ingestion throughput, query latency, and data reliability for cross-functional teams.) Tj
+T*
+( ) Tj
+T*
+(EDUCATION) Tj
+T*
+(Boston University — M.S. Applied Data Analytics \(4.0 GPA\), Jan 2025) Tj
+T*
+(Navrachana University — B.S. Information Technology \(4.0 GPA\), Aug 2023) Tj
+T*
+( ) Tj
+T*
+(SKILLS) Tj
+T*
+(Data Modeling: logical/physical design, star & snowflake schemas, columnar storage \(Parquet/ORC\)) Tj
+T*
+(ETL Engineering: high-throughput ingestion, CDC patterns, Airflow DAG orchestration) Tj
+T*
+(Optimization: SQL tuning, execution plan analysis, materialized views, advanced indexing) Tj
+T*
+(Distributed Processing: Apache Spark, Presto, sharding, caching strategies) Tj
+T*
+(Data Quality: automated testing, anomaly detection, custom observability dashboards) Tj
+T*
+(Programming & Tools: Python, SQL, Java, Docker, Kubernetes, Terraform) Tj
+T*
+( ) Tj
+T*
+(CERTIFICATIONS) Tj
+T*
+(Microsoft Azure Data Scientist Associate — Dec 2024) Tj
+T*
+(Google Data Analytics — Nov 2024) Tj
+T*
+( ) Tj
+T*
+(EXPERIENCE) Tj
+T*
+(Techgrains Technologies — Data Engineering Intern | Feb 2023 – Aug 2023) Tj
+T*
+(• Designed parallel, fault-tolerant ETL pipelines with Python, Airflow, and Spark to lift throughput by 30%.) Tj
+T*
+(• Modeled normalized and denormalized schemas balancing integrity with analytics performance.) Tj
+T*
+(• Tuned SQL with materialized views and bitmap/bloom indexes, cutting query latency up to 40%.) Tj
+T*
+(• Combined Kafka streaming with Spark batch jobs and Debezium CDC for consistent real-time updates.) Tj
+T*
+(• Built Looker and Grafana dashboards monitoring freshness, quality checks, and pipeline SLAs.) Tj
+T*
+( ) Tj
+T*
+(PROJECTS) Tj
+T*
+(Real-Time E-Commerce Analytics Pipeline — streaming ingestion with Kafka, Airflow, Spark, and materialized views reducing query latency by 70%.) Tj
+T*
+(Urban Data Warehouse for Spatial Analytics — Spark-based processing with regional/time partitioning to accelerate geospatial analysis by 40%.) Tj
+T*
+(Data Observability Platform — CDC-driven monitoring, anomaly detection, and dashboards enabling proactive incident response.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000002780 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2850
+%%EOF
