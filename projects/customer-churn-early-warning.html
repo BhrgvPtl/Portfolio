@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Lead data scientist builds a churn early-warning system combining dbt, LightGBM, and marketing automation to retain $3.2M ARR."
+    />
+    <title>Customer Churn Early-Warning System &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Alex Taylor</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">B2B SaaS &mdash; Lifecycle Marketing</p>
+        <h1>Customer Churn Early-Warning System</h1>
+        <p>
+          Activated a predictive churn signal for a subscription SaaS platform, integrating model
+          outputs into marketing automation to drive timely, personalized outreach.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Lead Data Scientist</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>16 weeks</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>11% churn reduction &bull; +$3.2M ARR retained</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          Renewals for mid-market customers were lagging, and marketing teams lacked visibility into
+          which accounts were at the highest risk of churn. Without a reliable early warning system,
+          customer success managers were triaging based on anecdotal signals and losing renewal
+          conversations to competitors.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Partnered with marketing ops to define success metrics and deployment requirements.</li>
+            <li>Ingested product telemetry, billing, and support interactions via dbt into Snowflake.</li>
+            <li>Engineered recency-based health signals and customer engagement aggregates.</li>
+            <li>Trained LightGBM models with monotonic constraints to retain business interpretability.</li>
+            <li>Deployed scoring jobs with Airflow and exposed features through a feature store API.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>dbt + Snowflake</li>
+            <li>Airflow</li>
+            <li>Python &amp; LightGBM</li>
+            <li>MLflow</li>
+            <li>Fivetran</li>
+            <li>HubSpot</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          Exploratory analysis revealed that product adoption stalled roughly 60 days before renewal
+          for accounts that eventually churned. Support ticket spikes and payment delays were the next
+          leading signals. We crafted a narrative showing executives how combining these behaviors
+          creates an actionable lead score. Weekly insights decks highlighted health trends across
+          cohorts, enabling proactive outreach campaigns.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Retained $3.2M in annual recurring revenue within the first two quarters post-launch.</li>
+          <li>Cut outreach prioritization time from 6 hours to 35 minutes per CSM weekly sync.</li>
+          <li>Achieved 0.78 precision at 20% recall, exceeding finance team&rsquo;s ROI threshold.</li>
+          <li>Implemented automated drift detection alerts integrated with Slack and PagerDuty.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Account health dashboard summarizing churn risk by segment.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Feature importance narrative illustrating leading churn drivers.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>Automation flow combining HubSpot sequences with product interventions.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          The scoring pipeline runs nightly using Airflow with CI/CD enforced through GitHub Actions.
+          dbt tests ensure freshness and referential integrity before model inference executes. Model
+          artifacts are tracked in MLflow, and the marketing automation triggers are gated behind
+          feature flagging to support experimentation and rollback.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          Browse the <a href="https://github.com/alex-taylor/churn-early-warning" target="_blank" rel="noreferrer">GitHub repository</a>
+          for modular dbt models, feature store configuration, and the MLOps deployment scripts. Each
+          directory contains README files explaining the design choices and reproducibility steps.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          We are currently piloting reinforcement learning to optimize intervention timing and adding
+          multi-touch attribution to better quantify campaign influence on retention.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Alex Taylor.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>

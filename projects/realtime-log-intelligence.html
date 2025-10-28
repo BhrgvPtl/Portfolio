@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Lead data engineer builds a real-time log intelligence platform using Kafka, Spark, and Terraform to deliver 99.9% uptime."
+    />
+    <title>Real-Time Log Intelligence &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Alex Taylor</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">Fintech &mdash; Platform Reliability</p>
+        <h1>Real-Time Log Intelligence Platform</h1>
+        <p>
+          Engineered a streaming analytics solution that processes 24 billion log events monthly to
+          surface fraud anomalies and platform health insights in under 60 seconds.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Lead Data Engineer</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>6 months</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>99.9% uptime &bull; $2.4M annual fraud loss avoided</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          The fintech&rsquo;s risk team needed real-time visibility into transaction anomalies, but batch
+          reports arrived hours late. Incident response lagged behind fraud attempts, creating
+          chargeback and reputational risk.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Designed a Kafka architecture resilient to bursty traffic with schema registry enforcement.</li>
+            <li>Implemented Spark Structured Streaming jobs with exactly-once semantics.</li>
+            <li>Stored curated aggregates in Delta Lake for downstream BI and machine learning.</li>
+            <li>Created Grafana dashboards and alerting pipelines with Prometheus metrics.</li>
+            <li>Automated infrastructure provisioning via Terraform modules and GitOps workflows.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>Apache Kafka</li>
+            <li>Spark Structured Streaming</li>
+            <li>Delta Lake</li>
+            <li>Grafana &amp; Prometheus</li>
+            <li>Terraform</li>
+            <li>ArgoCD</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          We highlighted how the platform compresses the detection timeline by visualizing anomaly
+          windows alongside prevented fraud losses. Executive updates focused on MTTR improvements and
+          the collaboration between risk analysts and SRE teams. Storytelling centered on customer trust
+          and proactive intervention.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Delivered sub-minute anomaly alerts with 99.9% platform uptime.</li>
+          <li>Prevented $2.4M in projected annual fraud losses.</li>
+          <li>Instrumented observability that reduced mean time to resolution by 43%.</li>
+          <li>Enabled self-service analytics for risk analysts with governed data products.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Streaming throughput dashboard with SLA thresholds.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Anomaly detection storyline showing fraud prevention wins.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>Infrastructure topology across Kafka, Spark, and Delta Lake.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          Infrastructure is codified in Terraform with environment blueprints deployed via ArgoCD.
+          CI/CD runs integration tests against ephemeral clusters, while chaos experiments validate
+          failover behavior. Observability spans structured logging, distributed tracing, and synthetic
+          transactions.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          View the <a href="https://github.com/alex-taylor/realtime-log-intelligence" target="_blank" rel="noreferrer">GitHub repository</a>
+          for streaming job notebooks, Terraform modules, and dashboard configurations. The README walks
+          through local development with Docker Compose and end-to-end deployment pipelines.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          Near-term enhancements include introducing feature serving for online models and exploring
+          Flink for stateful pattern detection across longer transaction windows.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Alex Taylor.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>
