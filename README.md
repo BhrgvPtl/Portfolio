@@ -1,14 +1,14 @@
-# Data Science & Engineering Portfolio
+# Bhargav Patel &mdash; Data Engineering Portfolio
 
-A single-page GitHub Pages site with narrative-driven case studies for data scientists and engineers.
-The site highlights end-to-end project execution, professional storytelling, and clear calls-to-action
-for prospective employers or clients.
+This repository powers Bhargav Patel's GitHub Pages site. It highlights real-world data engineering
+projects, resume highlights, and contact paths for teams seeking expertise in scalable pipelines,
+lakehouse architecture, and data observability.
 
 ## Features
 
-- **Homepage** with an executive summary, curated project highlights, resume snapshot, and contact paths.
-- **Dedicated project pages** for three end-to-end initiatives covering analytics, forecasting, and platform engineering.
-- **Business-first storytelling** that connects data work to measurable outcomes, tooling, and production practices.
+- **Homepage** introducing Bhargav, surfacing project case studies, and summarizing resume highlights.
+- **Dedicated project pages** for streaming analytics, spatial data warehousing, and data observability initiatives.
+- **Business-first storytelling** that ties engineering decisions to measurable impact and platform reliability.
 - **Responsive design** with dark-mode friendly styling suitable for desktop and mobile experiences.
 
 ## Local Development
