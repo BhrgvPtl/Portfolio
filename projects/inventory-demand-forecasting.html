@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Principal data scientist delivers an inventory demand forecasting platform reducing stock-outs by 18% and freeing $1.1M in capital."
+    />
+    <title>Inventory Demand Forecasting &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Alex Taylor</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">Retail &mdash; Supply Chain Optimization</p>
+        <h1>Inventory Demand Forecasting Platform</h1>
+        <p>
+          Delivered a demand forecasting program for 420+ SKUs that powers weekly replenishment and
+          merchandising decisions across 60 retail locations.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Principal Data Scientist</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>5 months</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>18% fewer stock-outs &bull; $1.1M working capital reduction</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          Northwind Retail struggled with manual, spreadsheet-based replenishment for seasonal
+          inventory. Regional managers spent days reconciling supplier orders and still experienced
+          chronic stock-outs for high-velocity items while over-ordering slow movers.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Centralized historical POS data, promotions, and supplier lead times in BigQuery.</li>
+            <li>Built a feature pipeline in SQL and dbt to capture lagged sales, events, and weather.</li>
+            <li>Evaluated Prophet, ARIMA, and gradient boosting models in a rolling-origin backtest.</li>
+            <li>Containerized the champion model and scheduled batch forecasts using Cloud Composer.</li>
+            <li>Published forecast accuracy scorecards in Tableau for regional demand planners.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>BigQuery</li>
+            <li>dbt</li>
+            <li>Python &amp; Prophet</li>
+            <li>Cloud Composer</li>
+            <li>Looker &amp; Tableau</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          Combining transaction logs with local events uncovered why traditional models underperformed
+          during holiday periods. Scenario analysis quantified the ROI of right-sizing inventory, and
+          leadership used interactive dashboards to drill into store-level forecasts. We emphasized the
+          narrative around customer experience: shelves staying stocked for loyalty program members.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Reduced stock-outs across key categories by 18% during the first holiday season.</li>
+          <li>Improved forecast MAPE by 27% compared with legacy spreadsheets.</li>
+          <li>Decreased working capital tied up in safety stock by $1.1M.</li>
+          <li>Delivered store-level simulation tools that guided supplier negotiations.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Rolling-origin backtest visualized against actual weekly sales.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Inventory heatmap highlighting promotion-driven demand spikes.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>ETL orchestration map for the production feature pipeline.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          Forecast jobs are orchestrated in Cloud Composer with environment-specific configuration
+          stored in Terraform. Automated data quality checks run via Great Expectations, and CI/CD
+          pipelines enforce SQL linting, unit tests, and deployment approvals before changes promote to
+          production.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          Review the <a href="https://github.com/alex-taylor/inventory-forecasting" target="_blank" rel="noreferrer">GitHub repository</a>
+          for modular SQL models, forecasting experiments, and infrastructure-as-code artifacts. Each
+          release is tagged with reproducible environment snapshots.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          Upcoming work includes integrating supplier reliability scores and switching to a probabilistic
+          forecasting approach to improve confidence interval calibration.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Alex Taylor.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>
