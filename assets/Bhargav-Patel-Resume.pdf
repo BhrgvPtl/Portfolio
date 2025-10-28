@@ -1,107 +1,56 @@
 %PDF-1.4
-1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
-endobj
-2 0 obj
-<< /Type /Pages /Count 1 /Kids [3 0 R] >>
-endobj
-3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
-endobj
-4 0 obj
-<< /Length 2488 >>
-stream
+1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj
+2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj
+3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>endobj
+4 0 obj<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>endobj
+5 0 obj<< /Length 2354 >>stream
 BT
 /F1 12 Tf
-14 TL
-72 780 Td
-(Bhargav Patel) Tj
-T*
-(Data Engineer | Brookline, MA) Tj
-T*
-(+1 \(857\) 396-3749 | bhargavp@bu.edu | github.com/bhargavpatel | linkedin.com/in/bhargavpatel) Tj
-T*
-( ) Tj
-T*
-(SUMMARY) Tj
-T*
-(Detail oriented data engineer specializing in scalable warehousing, streaming ETL, and analytics enablement.) Tj
-T*
-(Proven track record optimizing ingestion throughput, query latency, and data reliability for cross-functional teams.) Tj
-T*
-( ) Tj
-T*
-(EDUCATION) Tj
-T*
-(Boston University — M.S. Applied Data Analytics \(4.0 GPA\), Jan 2025) Tj
-T*
-(Navrachana University — B.S. Information Technology \(4.0 GPA\), Aug 2023) Tj
-T*
-( ) Tj
-T*
-(SKILLS) Tj
-T*
-(Data Modeling: logical/physical design, star & snowflake schemas, columnar storage \(Parquet/ORC\)) Tj
-T*
-(ETL Engineering: high-throughput ingestion, CDC patterns, Airflow DAG orchestration) Tj
-T*
-(Optimization: SQL tuning, execution plan analysis, materialized views, advanced indexing) Tj
-T*
-(Distributed Processing: Apache Spark, Presto, sharding, caching strategies) Tj
-T*
-(Data Quality: automated testing, anomaly detection, custom observability dashboards) Tj
-T*
-(Programming & Tools: Python, SQL, Java, Docker, Kubernetes, Terraform) Tj
-T*
-( ) Tj
-T*
-(CERTIFICATIONS) Tj
-T*
-(Microsoft Azure Data Scientist Associate — Dec 2024) Tj
-T*
-(Google Data Analytics — Nov 2024) Tj
-T*
-( ) Tj
-T*
-(EXPERIENCE) Tj
-T*
-(Techgrains Technologies — Data Engineering Intern | Feb 2023 – Aug 2023) Tj
-T*
-(• Designed parallel, fault-tolerant ETL pipelines with Python, Airflow, and Spark to lift throughput by 30%.) Tj
-T*
-(• Modeled normalized and denormalized schemas balancing integrity with analytics performance.) Tj
-T*
-(• Tuned SQL with materialized views and bitmap/bloom indexes, cutting query latency up to 40%.) Tj
-T*
-(• Combined Kafka streaming with Spark batch jobs and Debezium CDC for consistent real-time updates.) Tj
-T*
-(• Built Looker and Grafana dashboards monitoring freshness, quality checks, and pipeline SLAs.) Tj
-T*
-( ) Tj
-T*
-(PROJECTS) Tj
-T*
-(Real-Time E-Commerce Analytics Pipeline — streaming ingestion with Kafka, Airflow, Spark, and materialized views reducing query latency by 70%.) Tj
-T*
-(Urban Data Warehouse for Spatial Analytics — Spark-based processing with regional/time partitioning to accelerate geospatial analysis by 40%.) Tj
-T*
-(Data Observability Platform — CDC-driven monitoring, anomaly detection, and dashboards enabling proactive incident response.) Tj
+1 0 0 1 72 780 Tm (Bhargav Patel) Tj
+1 0 0 1 72 764 Tm (Brookline, MA | +1 \(857\) 396-3749 | bhargavp@bu.edu) Tj
+1 0 0 1 72 748 Tm (GitHub: github.com/BhrgvPtl | LinkedIn: linkedin.com/in/bhargavpatel) Tj
+1 0 0 1 72 732 Tm () Tj
+1 0 0 1 72 716 Tm (SUMMARY) Tj
+1 0 0 1 72 700 Tm (Detail-oriented Data Engineer experienced in scalable warehousing, high-throughput) Tj
+1 0 0 1 72 684 Tm (pipelines, and real-time analytics that keep decision makers informed.) Tj
+1 0 0 1 72 668 Tm () Tj
+1 0 0 1 72 652 Tm (EDUCATION) Tj
+1 0 0 1 72 636 Tm (Boston University — M.S. Applied Data Analytics \(4.0\) | Jan 2025) Tj
+1 0 0 1 72 620 Tm (Navrachana University — B.S. Information Technology \(4.0\) | Aug 2023) Tj
+1 0 0 1 72 604 Tm () Tj
+1 0 0 1 72 588 Tm (SKILLS) Tj
+1 0 0 1 72 572 Tm (Data Modeling \(star/snowflake\), Columnar Storage \(Parquet/ORC\)) Tj
+1 0 0 1 72 556 Tm (ETL Engineering \(Airflow, Spark, CDC\), Query Optimization, Distributed Processing) Tj
+1 0 0 1 72 540 Tm (Data Quality & Observability, Python, SQL, Java, Docker, Kubernetes, Terraform) Tj
+1 0 0 1 72 524 Tm () Tj
+1 0 0 1 72 508 Tm (CERTIFICATIONS) Tj
+1 0 0 1 72 492 Tm (Microsoft Azure Data Scientist Associate — Dec 2024) Tj
+1 0 0 1 72 476 Tm (Google Data Analytics Professional Certificate — Nov 2024) Tj
+1 0 0 1 72 460 Tm () Tj
+1 0 0 1 72 444 Tm (EXPERIENCE) Tj
+1 0 0 1 72 428 Tm (Techgrains Technologies — Data Engineering Intern | Feb 2023 – Aug 2023) Tj
+1 0 0 1 72 412 Tm (• Built parallel, fault-tolerant Airflow + Spark pipelines lifting throughput 30%) Tj
+1 0 0 1 72 396 Tm (• Modeled normalized + denormalized schemas to balance integrity with fast analytics) Tj
+1 0 0 1 72 380 Tm (• Tuned SQL with materialized views and indexing to cut latency by up to 40%) Tj
+1 0 0 1 72 364 Tm (• Blended Kafka streaming with Spark batch CDC for near real-time dashboards) Tj
+1 0 0 1 72 348 Tm (• Deployed Looker/Grafana observability for freshness, quality, and SLA tracking) Tj
+1 0 0 1 72 332 Tm () Tj
+1 0 0 1 72 316 Tm (PROJECT HIGHLIGHTS) Tj
+1 0 0 1 72 300 Tm (Real-Time E-Commerce Analytics Pipeline — Kafka, Airflow, Spark, Delta Lake) Tj
+1 0 0 1 72 284 Tm (Urban Data Warehouse for Spatial Analytics — Spark, GIS layers, partitioning) Tj
+1 0 0 1 72 268 Tm (Data Observability Platform — Kafka + Debezium, Airflow DAGs, Looker & Grafana) Tj
 ET
 endstream
-endobj
-5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 xref
 0 6
 0000000000 65535 f 
 0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000002780 00000 n 
-trailer
-<< /Size 6 /Root 1 0 R >>
+0000000056 00000 n 
+0000000111 00000 n 
+0000000235 00000 n 
+0000000303 00000 n 
+trailer<< /Size 6 /Root 1 0 R >>
 startxref
-2850
+2706
 %%EOF
