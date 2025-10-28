@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Bhargav Patel deploys a data observability platform combining CDC, anomaly detection, and dashboards for pipeline reliability."
+    />
+    <title>Data Observability &amp; Quality Platform &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Bhargav Patel</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">Data Reliability &mdash; Monitoring</p>
+        <h1>Data Observability &amp; Quality Platform</h1>
+        <p>
+          Implemented full-stack monitoring for batch and streaming pipelines, bringing visibility
+          to latency, freshness, and anomaly detection for analytics stakeholders.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Data Engineer</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>8 weeks</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>50% faster incident response &bull; Automated SLA reporting</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          The organization relied on dozens of Airflow DAGs and Kafka streams, yet lacked
+          systematic monitoring. Analysts discovered data issues only after dashboards
+          went stale. Engineering teams needed proactive visibility into anomalies,
+          freshness, and schema drift.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Instrumented ETL jobs with structured logging, metrics, and tracing across Airflow and Spark workloads.</li>
+            <li>Implemented CDC with Debezium and Kafka to validate batch loads against streaming sources.</li>
+            <li>Deployed anomaly detection models for row counts, null ratios, and business KPIs.</li>
+            <li>Built Looker dashboards and Grafana boards for real-time visibility.</li>
+            <li>Integrated alerts with Slack and PagerDuty, backed by runbooks and RCA templates.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>Apache Airflow</li>
+            <li>Apache Spark</li>
+            <li>Kafka + Debezium</li>
+            <li>Great Expectations</li>
+            <li>Looker</li>
+            <li>Grafana</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          By centralizing observability metrics, the team could track freshness SLAs for executive
+          dashboards and quickly correlate spikes in null values with upstream issues. Weekly
+          reviews translated engineering findings into business impact, building trust across
+          product, finance, and operations.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Reduced mean time to detect pipeline incidents from 2 hours to 10 minutes.</li>
+          <li>Automated 30+ data quality checks, blocking downstream loads when anomalies triggered.</li>
+          <li>Introduced SLA scorecards that improved leadership confidence in analytics deliverables.</li>
+          <li>Created onboarding materials that enabled analysts to self-serve monitoring dashboards.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Data quality scorecard summarizing test coverage and pass rates.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Latency heatmap highlighting bottlenecks across Airflow DAGs.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>Incident response workflow tying alerts to runbooks and ownership.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          Terraform defines observability infrastructure, including Kafka connectors, monitoring
+          clusters, and alerting policies. GitHub Actions runs CI for data quality suites and
+          publishes documentation to Confluence using automated pipelines.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          Review the
+          <a href="https://github.com/BhrgvPtl/data-observability-platform" target="_blank" rel="noreferrer">GitHub repository</a>
+          for DAG instrumentation patterns, Great Expectations suites, and Terraform modules that
+          make the platform extensible.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          Future iterations focus on embedding data contracts with upstream services and adding
+          auto-remediation hooks that can quarantine bad data before it reaches analytics layers.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bhargav Patel.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Case study: Bhargav Patel architects a spatial-temporal urban data warehouse that accelerates planning analytics by 40%."
+    />
+    <title>Urban Data Warehouse for Spatial Analytics &mdash; Case Study</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project">
+    <header class="project-hero">
+      <nav class="top-nav">
+        <a class="brand" href="../index.html">Bhargav Patel</a>
+        <ul>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#resume">Resume</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="project-hero-content">
+        <p class="eyebrow">Civic Tech &mdash; Spatial Intelligence</p>
+        <h1>Urban Data Warehouse for Spatial Analytics</h1>
+        <p>
+          Designed a lakehouse that blends GIS layers with temporal sensor data, powering
+          planners with faster geospatial analyses and scenario modeling.
+        </p>
+        <div class="meta-grid">
+          <div>
+            <h3>Role</h3>
+            <p>Data Engineer</p>
+          </div>
+          <div>
+            <h3>Timeline</h3>
+            <p>10 weeks</p>
+          </div>
+          <div>
+            <h3>Impact</h3>
+            <p>40% faster spatial queries &bull; 30+ curated civic datasets</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <section class="project-section">
+        <h2>Business Problem</h2>
+        <p>
+          City planners received siloed data drops from transportation, zoning, and utilities
+          teams. Each dataset had unique coordinate systems, refresh cadences, and governance
+          rules. Analysts spent hours wrangling spreadsheets before they could answer
+          questions about mobility programs, capital projects, or resilience planning.
+        </p>
+      </section>
+
+      <section class="project-section two-column">
+        <div>
+          <h2>Approach</h2>
+          <ol class="numbered">
+            <li>Established data governance and metadata standards across contributing agencies.</li>
+            <li>Ingested shapefiles, sensor feeds, and tabular data into a Delta Lake-backed bronze layer.</li>
+            <li>Leveraged Spark to normalize coordinate reference systems and harmonize temporal granularity.</li>
+            <li>Modeled star- and snowflake-based marts optimized for regional and temporal slicing.</li>
+            <li>Built incremental materializations with dbt to serve analysts through BI dashboards.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Tools &amp; Methods</h2>
+          <ul class="pill-list">
+            <li>Apache Spark</li>
+            <li>Delta Lake</li>
+            <li>dbt</li>
+            <li>PostGIS</li>
+            <li>QGIS</li>
+            <li>Tableau</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Data Story</h2>
+        <p>
+          With harmonized data, planners could analyze pedestrian volumes against crash
+          reports, overlay zoning petitions with flood risks, and evaluate how pilot
+          projects shifted commute times. Storytelling dashboards translated complex
+          GIS computations into intuitive metrics for public meetings and executive
+          briefings.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Results</h2>
+        <ul class="highlight-list">
+          <li>Reduced geospatial query time by 40% using partitioning by region and time windows.</li>
+          <li>Cut manual data preparation from 6 hours to 45 minutes with reusable transformation macros.</li>
+          <li>Enabled near real-time KPI tracking for bike lane utilization and congestion mitigation.</li>
+          <li>Delivered documentation and training that onboarded 15 analysts in under two weeks.</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>Visual Storytelling</h2>
+        <div class="visual-grid">
+          <figure class="visual-card">
+            <div class="visual-placeholder gradient"></div>
+            <figcaption>Scenario planning workbook comparing infrastructure investment options.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder line"></div>
+            <figcaption>Temporal heatmap showing traffic flow changes after policy interventions.</figcaption>
+          </figure>
+          <figure class="visual-card">
+            <div class="visual-placeholder flow"></div>
+            <figcaption>Data lineage map that documents ingestion, transformation, and serving layers.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2>Productionization</h2>
+        <p>
+          Spark jobs run on autoscaling clusters orchestrated through Airflow, while dbt manages
+          testing (freshness, relationships, accepted values) and documentation. Access policies
+          enforce least privilege across departments, and Terraform codifies storage, compute,
+          and IAM resources for reproducibility.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Explore the Code</h2>
+        <p>
+          Browse the
+          <a href="https://github.com/BhrgvPtl/urban-data-warehouse" target="_blank" rel="noreferrer">GitHub repository</a>
+          for ingestion scripts, dbt models, GIS processing notebooks, and the playbook I used to
+          onboard analysts.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <h2>Next Steps</h2>
+        <p>
+          Upcoming work includes integrating real-time IoT sensors, adding differential privacy for
+          sensitive datasets, and experimenting with vector tiles to improve map rendering speed.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bhargav Patel.</p>
+    </footer>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+    </script>
+  </body>
+</html>
